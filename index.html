@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+let time_24h = prompt("Enter time in 24-hour clock format (e.g., 1900):");
+
+time_24h = parseInt(time_24h);
+
+if (time_24h < 0 || time_24h > 2359) {
+    document.write("Invalid input. Please enter a valid time between 0000 and 2359.");
+} else if (time_24h < 1200) {
+    if (time_24h === 0) {
+        document.write("12 AM midnight");
+    } else {
+        document.write(Math.floor(time_24h / 100) + " AM");
+    }
+} else if (time_24h < 1300) {
+    document.write("12 PM noon");
+} else {
+    document.write((Math.floor(time_24h / 100) - 12) + " PM");
+}
+
+    </script>
+</body>
+</html>
